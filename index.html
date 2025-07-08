@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Flowchart Animation</title>  <title>Flowchart Animation</title>
+
+  <style>
+    body {
+      background-color: #121212;
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 50px;
+      color: white;
+    }
+
+    .flow-heading {
+      color: red;
+      font-weight: bold;
+      text-decoration: underline;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .author {
+      color: blue;
+      font-weight: bold;
+      text-decoration: blue;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .step {
+      background-color: #1e1e1e;
+      border: 2px solid #4CAF50;
+      border-radius: 10px;
+      padding: 20px 40px;
+      margin: 10px 0;
+      position: relative;
+      text-align: center;
+      min-width: 300px;
+    }
+
+    .arrow {
+        position: relative;
+        width: 4px;
+        height: 40px;
+        background: repeating-linear-gradient(
+          to bottom,
+          #4CAF50,
+          #4CAF50 6px,
+          transparent 6px,
+          transparent 12px
+        );
+        animation: flicker 1s infinite;
+        margin: 0 auto;
+      }
+
+    .arrow::after {
+      content: "▼";
+      color: rgb(249, 44, 44);
+      font-size: 25px;
+      position: absolute;
+      bottom: -16px;
+      left: 50%;
+      transform: translateX(-50%);
+      animation: flicker 1s infinite;
+    }
+    
+    @keyframes flicker {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.2; }
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <body>
+
+  <h1 class="flow-heading">Health & Wellness Agent – Data Flow Chart</h1>
+
+
+
+
+  <div class="step">🔹 Start</div>
+  <div class="arrow"></div>
+    <div class="step">🔻 User submits a message on the web page<br><small>(via <strong>main.py</strong>)</small></div>
+  <div class="arrow"></div>
+
+  <div class="step">🔧 <strong>hooks.py</strong> Input Hook triggers<br>
+    - Logs input<br>
+    - Validates input<br>
+    - Prepares or cleans message
+  </div>
+  <div class="arrow"></div>
+
+  <div class="step">📦 <strong>context.py</strong> loads session context<br>
+    - Loads user ID, chat history, current goal, etc.
+  </div>
+  <div class="arrow"></div>
+
+  <div class="step">🧠 <strong>agent.py</strong> Main Agent receives input<br>
+    - Analyzes intent<br>
+    - Decides: reply directly, call tool, or handoff
+  </div>
+  <div class="arrow"></div>
+
+  <div class="step">🛡️ <strong>guardrails.py</strong> (optional)<br>
+    - Validates prompt or constraints (e.g., remove unsafe input)
+  </div>
+  <div class="arrow"></div>
+
+  <div class="step">🧰 <strong>tools/</strong> Called if needed<br>
+    - Executes functions (e.g., diet_plan_tool, search_api, etc.)
+  </div>
+  <div class="arrow"></div>
+
+  <div class="step">🔁 Returns result to <strong>agent.py</strong></div>
+  <div class="arrow"></div>
+
+  <div class="step">🛡️ <strong>guardrails.py</strong> Output check (optional)<br>
+    - Filters or adjusts agent output before sending
+  </div>
+  <div class="arrow"></div>
+
+  <div class="step">🔧 <strong>hooks.py</strong> Output Hook triggers<br>
+    - Logs response<br>
+    - Adds tracking/analytics/debug info
+  </div>
+  <div class="arrow"></div>
+
+  <div class="step">📡 <strong>streaming.py</strong> (optional)<br>
+    - Streams response word-by-word or chunk-by-chunk
+  </div>
+  <div class="arrow"></div>
+
+  <div class="step">💬 Final response sent to user<br><small>(via <strong>main.py</strong> → Streamlit/UI)</small></div>
+  <div class="arrow"></div>
+  <div class="step">✅ End</div>
+
+  <h4 class="author">Author : Azmat Ali</h4>
+
+</body>
+</html>
