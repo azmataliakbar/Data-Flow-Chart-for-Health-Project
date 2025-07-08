@@ -76,6 +76,120 @@
       50% { opacity: 0.2; }
     }
 
+    /* Ensures proper scaling on mobile */
+@media screen and (max-width: 600px) {
+  .step {
+    padding: 16px 20px;
+    font-size: 0.95rem;
+  }
+
+  .flow-heading {
+    font-size: 1.2rem;
+    padding: 0 10px;
+  }
+
+  .author {
+    font-size: 1rem;
+  }
+
+  .arrow::after {
+    font-size: 20px;
+  }
+}
+
+@keyframes flicker {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.2; }
+}
+
+/* Small phones (portrait) */
+@media screen and (max-width: 480px) {
+  .step {
+    padding: 14px 16px;
+    font-size: 0.9rem;
+  }
+
+  .flow-heading {
+    font-size: 1rem;
+  }
+
+  .arrow::after {
+    font-size: 18px;
+  }
+}
+
+/* Larger phones (landscape) and small tablets */
+@media screen and (max-width: 768px) {
+  .step {
+    padding: 16px 20px;
+    font-size: 1rem;
+  }
+
+  .flow-heading {
+    font-size: 1.2rem;
+  }
+
+  .arrow::after {
+    font-size: 22px;
+  }
+}
+
+/* Tablets and small laptops */
+@media screen and (max-width: 992px) {
+  .step {
+    padding: 18px 30px;
+    font-size: 1.1rem;
+  }
+
+  .flow-heading {
+    font-size: 1.4rem;
+  }
+
+  .arrow::after {
+    font-size: 24px;
+  }
+}
+
+/* Large screens (desktops) */
+@media screen and (min-width: 993px) {
+  .step {
+    padding: 20px 40px;
+    font-size: 1.2rem;
+  }
+
+  .flow-heading {
+    font-size: 1.6rem;
+  }
+
+  .arrow::after {
+    font-size: 25px;
+  }
+
+  /* Extra small phones (e.g., 320px to 375px wide) */
+@media screen and (max-width: 375px) {
+  .step {
+    padding: 12px 12px;
+    font-size: 0.85rem;
+  }
+
+  .flow-heading {
+    font-size: 0.95rem;
+    padding: 0 8px;
+  }
+
+  .author {
+    font-size: 0.85rem;
+  }
+
+  .arrow::after {
+    font-size: 16px;
+  }
+}
+
+}
+
+
+
   </style>
 
 </head>
