@@ -167,9 +167,13 @@
 
   /* Extra small phones (e.g., 320px to 375px wide) */
 @media screen and (max-width: 375px) {
-  .step {
-    padding: 12px 12px;
+  .step .step {
+    width: 90vw; /* viewport width ensures it scales */
+    max-width: 100%;
+    padding: 12px;
     font-size: 0.85rem;
+    box-sizing: border-box; /* ensures padding stays within width */
+    word-wrap: break-word;
   }
 
   .flow-heading {
